@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["David J. Lee"]
   s.email       = ["david@lee.dj"]
   s.homepage    = ""
-  s.summary     = ""
-  s.description = ""
+  s.summary     = "A simple library to help with Single Sign On cookies"
+  s.description = "Used to encode and decode cookies used in a single sign on implementation within the same domain"
 
   s.rubyforge_project = "trivialsso"
 
