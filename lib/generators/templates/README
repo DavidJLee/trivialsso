@@ -1,0 +1,12 @@
+===============================================================================
+
+What you need to do next:
+
+  1. Generate a shared secret configuration file:
+				rails generate trivialsso:install
+
+	2. Edit config/initalizers/sso_secret.rb to include a secret that will
+	   be shared between all of the sites. This secret must match for each
+	   site using the cookies.
+
+===============================================================================
