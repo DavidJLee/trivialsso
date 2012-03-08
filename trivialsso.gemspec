@@ -20,5 +20,10 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  # s.add_runtime_dependency "rails"
+
+	# Need at least 3.2.0 to support the JSON serialization.
+	s.add_dependency "rails",					"~> 3.2.0"
+	s.add_dependency "activesupport", "~> 3.2.0"
+
 end

@@ -1,18 +1,18 @@
-module Trivalsso
+module Trivialsso
 	module Generators
 		class InstallGenerator < Rails::Generators::Base
-			
 			source_root File.expand_path("../../templates",__FILE__)
 			
+			desc "Creates a sso_secret initalizer"
+			
 			def copy_intializer
-				#template?
-				
-				copy_file "sso_secret.rb", "config/initalizers/sso_secret.rb"
+				#template - maybe use that in the future?
+				template "sso_secret.rb", "config/initializers/sso_secret.rb"
 			end
 			
 			
 			def show_readme
-				readme "foobar"
+				readme "README"
 			end
 			
 		end

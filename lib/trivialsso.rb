@@ -1,13 +1,14 @@
 require "trivialsso/version"
 
 module Trivialsso	
-		#TODO: Break out into multiple classes, Login for decode, and create? for creation. (bake?)
 		class Login
 			# signing and un-signing may have to be refactored to use OpenSSL:HMAC...
-			# as this might not work well across platforms. (ideally this should work for PHP as well)
+			# as this will not work well across platforms. (ideally this should work for PHP as well)
 
 			# create an encrypted and signed cookie containing userdata and an expiry date.
 			# userdata should be an array, and at minimum include a 'username' key.
+			# using json serializer to hopefully allow future cross version compatibliity 
+			# (Marshall, the default serializer, is not compatble between versions)
 			def self.cookie(userdata, exp_date = expire_date)
 				begin
 					raise MissingConfig if Rails.configuration.sso_secret.blank?	
@@ -45,7 +46,6 @@ module Trivialsso
 
 					# Determine how many seconds our cookie is valid for.
 					timeRemain = timestamp - DateTime.now.to_i
-					Rails.logger.debug "Time Remaining: " + timeRemain.to_s
 
 					#make sure current time is not past timestamp.
 					if timeRemain > 0
