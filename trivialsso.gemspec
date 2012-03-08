@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Trivialsso::VERSION
   s.authors     = ["David J. Lee"]
   s.email       = ["david@lee.dj"]
-  s.homepage    = "https://github.com/DavidJLee/trivialsso"
+  s.homepage    = "http://lee.dj/"
   s.summary     = "A simple library to help with Single Sign On cookies"
   s.description = "Used to encode and decode cookies used in a single sign on implementation within the same domain"
 
