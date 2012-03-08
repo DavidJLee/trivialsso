@@ -10,12 +10,15 @@ This does *not* work across domains.
 ## Getting Started
 
 Add the gem to your Gemfile
+
 	gem 'trivialsso'
 
 Install the gem
+
 	bundle install
 
 After you've installed the gem, you need to generate a configuration file.
+
 	rails g trivialsso:install
 
 This will create an initializer file with a shared secret. You need to modify this to a big long
@@ -25,7 +28,7 @@ for the cookies to properly interoperate.
 
 ## Creating a cookie
 
-A cookie is created using a hash of data supplied to it. This has at a minimum must contain a "username" key.
+A cookie is created using a hash of data supplied to it. This must contain a "username" key.
 
 When you create the cookie data an expire time is built into the payload. Setting the :expires on the cookie is
 just a convenience to make sure it gets cleared by the browser. The actual expiration date that matters is what is encoded in the cookie.
@@ -50,6 +53,7 @@ The above code creates a hash of data we will be putting in the cookie, generate
 ## Decoding a cookie
 
 Retrieve the contents of the cookie by calling decode_cookie
+
 	@userdata = Trivialsso::Login.decode_cookie(cookies[:sso_login])
 
 This will throw an exception if the cookie has been tampered with, or if the expiration date has passed.
