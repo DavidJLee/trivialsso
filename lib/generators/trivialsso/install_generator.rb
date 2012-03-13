@@ -5,11 +5,9 @@ module Trivialsso
 			
 			desc "Creates a sso_secret initalizer"
 			
-			def copy_intializer
-				#template - maybe use that in the future?
+			def copy_initializer
 				template "sso_secret.rb", "config/initializers/sso_secret.rb"
 			end
-			
 			
 			def show_readme
 				readme "README"
