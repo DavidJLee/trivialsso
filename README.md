@@ -89,7 +89,7 @@ Here are some methods you can add into your application controller to authentica
 
 	# our current_user decodes the cookie.
 	def current_user
-		Trivialsso::Login.decode_cookie(cookies[:ophth_login])
+		Trivialsso::Login.decode_cookie(cookies[:sso_login])
 	end
 
 	# Define the name we want to record in paper_trail (if using)
