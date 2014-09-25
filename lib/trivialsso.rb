@@ -7,8 +7,8 @@ module Trivialsso
 
 			# create an encrypted and signed cookie containing userdata and an expiry date.
 			# userdata should be an array, and at minimum include a 'username' key.
-			# using json serializer to hopefully allow future cross version compatibliity 
-			# (Marshall, the default serializer, is not compatble between versions)
+			# using json serializer to hopefully allow future cross version compatibility 
+			# (Marshall, the default serializer, is not compatible between versions)
 			def self.cookie(userdata, exp_date = expire_date)
 				begin
 					raise MissingConfig if Rails.configuration.sso_secret.blank?	
@@ -56,7 +56,7 @@ module Trivialsso
 				end
 			end
 
-			#returns the exipiry date from now. Used for setting an expiry date when creating cookies.
+			#returns the expiry date from now. Used for setting an expiry date when creating cookies.
 			def self.expire_date
 				9.hours.from_now
 			end
@@ -69,7 +69,7 @@ module Trivialsso
 		# General Cookie Error
 		class CookieError < RuntimeError
 			def to_s
-				"There was an error processing the Ophth Cookie"
+				"There was an error processing the cookie"
 			end
 		end
 
